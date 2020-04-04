@@ -1,0 +1,161 @@
+import React, { PureComponent, Component } from "react";
+
+import { Image, Text, View, ScrollView, StyleSheet } from "react-native";
+import Logo from "../components/logo";
+import {
+  responsiveScreenHeight,
+  responsiveScreenWidth,
+  responsiveScreenFontSize
+} from "react-native-responsive-dimensions";
+import ProfileIcon from "../components/profileIcons";
+import Button from "../components/button";
+import Footer from "../components/footer";
+
+class HomeScreen extends Component {
+  static navigationOptions = {
+    title: "Home Screen",
+    maxLength: 400,
+    headerShown: false
+  };
+  render() {
+    return (
+      <View
+        style={{
+          flex: 1,
+          backgroundColor: "white"
+        }}
+      >
+        <View
+          style={{
+            marginTop: responsiveScreenHeight(2.5),
+            alignSelf: "center"
+          }}
+        >
+          <Logo />
+        </View>
+
+        <View
+          style={{
+            flex: 1,
+            alignItems: "center",
+            // justifyContent: "center",
+            marginLeft: responsiveScreenHeight(2),
+            backgroundColor: "white"
+          }}
+        >
+          <View>
+            <Text style={{ fontSize: responsiveScreenFontSize(2.4) }}>
+              Hi John! Let's get started on this journey to a healthy lifestyle.
+              {"\n"}
+            </Text>
+            <Text style={{ fontSize: responsiveScreenFontSize(2.25) }}>
+              Please select a Status to enter the required information :
+            </Text>
+          </View>
+          <ScrollView
+            style={{
+              flex: 1,
+              marginTop: responsiveScreenHeight(2),
+              marginBottom: responsiveScreenHeight(7.5)
+              // backgroundColor: "red"
+            }}
+          >
+            <View style={{ flex: 1, flexDirection: "row" }}>
+              <ProfileIcon
+                source={require("../resources/images/HealthStatus.png")}
+              />
+              <Button
+                title="Health Status"
+                buttonStyle={[styles.buttonStyle]}
+                textStyle={styles.textStyle}
+                onPress={() => this.props.navigation.navigate("HomeScreen")}
+              />
+            </View>
+            <View style={{ flex: 1, flexDirection: "row" }}>
+              <ProfileIcon
+                source={require("../resources/images/SocioEconomicStatus.png")}
+              />
+              <Button
+                title="Socio Economic Status"
+                buttonStyle={[styles.buttonStyle]}
+                textStyle={styles.textStyle}
+                onPress={() => this.props.navigation.navigate("HomeScreen")}
+              />
+            </View>
+            <View style={{ flex: 1, flexDirection: "row" }}>
+              <ProfileIcon
+                source={require("../resources/images/EnvironmentalStatus.png")}
+              />
+              <Button
+                title="Environmental Status"
+                buttonStyle={[styles.buttonStyle]}
+                textStyle={styles.textStyle}
+                onPress={() => this.props.navigation.navigate("HomeScreen")}
+              />
+            </View>
+            <View style={{ flex: 1, flexDirection: "row" }}>
+              <ProfileIcon
+                source={require("../resources/images/FoodHabits.png")}
+              />
+              <Button
+                title="Life Style"
+                buttonStyle={[styles.buttonStyle]}
+                textStyle={styles.textStyle}
+                onPress={() => this.props.navigation.navigate("HomeScreen")}
+              />
+            </View>
+            <View style={{ flex: 1, flexDirection: "row" }}>
+              <ProfileIcon
+                source={require("../resources/images/FoodHabits.png")}
+              />
+              <Button
+                title="Food Habits"
+                buttonStyle={[styles.buttonStyle]}
+                textStyle={styles.textStyle}
+                onPress={() => this.props.navigation.navigate("HomeScreen")}
+              />
+            </View>
+          </ScrollView>
+        </View>
+        <Footer
+          onPressHome={() => this.props.navigation.navigate("HomeScreen")}
+          onPressProfile={() => this.props.navigation.navigate("ProfileScreen")}
+          onPressBell={() =>
+            this.props.navigation.navigate("NotificationScreen")
+          }
+          onPressReward={() => this.props.navigation.navigate("RewardScreen")}
+          onPressSetting={() => this.props.navigation.navigate("SettingScreen")}
+        />
+      </View>
+    );
+  }
+}
+
+const styles = StyleSheet.create({
+  // title: {
+  //   fontSize: 35,
+  //   fontWeight: "bold",
+  //   textAlign: "left",
+  //   paddingVertical: 50,
+  //   paddingLeft: 35,
+  //   color: "black"
+  // },
+  buttonStyle: {
+    backgroundColor: "#e6f5f1",
+    borderWidth: 1.2,
+    borderRadius: 20,
+    paddingVertical: responsiveScreenHeight(2),
+    width: responsiveScreenWidth(62),
+    alignSelf: "center",
+    justifyContent: "center",
+    marginHorizontal: responsiveScreenHeight(3.5)
+  },
+  textStyle: {
+    textAlign: "center",
+    fontWeight: "bold",
+    color: "black",
+    fontSize: responsiveScreenFontSize(2.25)
+  }
+});
+
+export default HomeScreen;
