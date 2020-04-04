@@ -146,6 +146,22 @@ class ProfileScreen extends Component {
             </Block>
           </View>
         </View>
+        <View
+          style={{
+            backgroundColor: "#e6f5f1",
+            bottom: responsiveScreenHeight(1),
+            position: "absolute",
+            left: responsiveScreenHeight(14.3),
+            height: responsiveScreenHeight(6.76),
+            width: responsiveScreenHeight(6.76),
+            alignSelf: "flex-end",
+            borderRadius: responsiveScreenHeight(100),
+            borderColor: "grey",
+            borderWidth: 1
+          }}
+        >
+          <View />
+        </View>
         <Footer
           onPressHome={() => this.props.navigation.navigate("HomeScreen")}
           onPressProfile={() => this.props.navigation.navigate("ProfileScreen")}

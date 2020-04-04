@@ -117,6 +117,22 @@ class HomeScreen extends Component {
             </View>
           </ScrollView>
         </View>
+        <View
+          style={{
+            backgroundColor: "#e6f5f1",
+            bottom: responsiveScreenHeight(0.74),
+            position: "absolute",
+            left: responsiveScreenHeight(3.9),
+            height: responsiveScreenHeight(6.76),
+            width: responsiveScreenHeight(6.76),
+            alignSelf: "flex-end",
+            borderRadius: responsiveScreenHeight(100),
+            borderColor: "grey",
+            borderWidth: 1
+          }}
+        >
+          <View />
+        </View>
         <Footer
           onPressHome={() => this.props.navigation.navigate("HomeScreen")}
           onPressProfile={() => this.props.navigation.navigate("ProfileScreen")}
