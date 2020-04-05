@@ -9,6 +9,11 @@ import ProfileScreen from "./src/screens/ProfileScreen";
 import NotificationScreen from "./src/screens/NotificationScreen";
 import RewardScreen from "./src/screens/RewardScreen";
 import SettingScreen from "./src/screens/SettingScreen";
+import HealthStatusScreen from "./src/screens/HealthStatus";
+import SocioEconomicStatus from "./src/screens/SocioEconomicStatus";
+import EnvironmentalStatus from "./src/screens/EnvironmentalStatus";
+import LifeStyle from "./src/screens/LifeStyle";
+import FoodHabits from "./src/screens/FoodHabits";
 
 const AppNavigator = createStackNavigator(
   {
@@ -17,10 +22,15 @@ const AppNavigator = createStackNavigator(
     ProfileScreen: ProfileScreen,
     NotificationScreen: NotificationScreen,
     RewardScreen: RewardScreen,
-    SettingScreen: SettingScreen
+    SettingScreen: SettingScreen,
+    HealthStatusScreen: HealthStatusScreen,
+    SocioEconomicStatus: SocioEconomicStatus,
+    EnvironmentalStatus: EnvironmentalStatus,
+    LifeStyle: LifeStyle,
+    FoodHabits: FoodHabits,
   },
   {
-    initialRouteName: "SplashScreen"
+    initialRouteName: "SplashScreen",
   },
   { headerMode: "none" }
 );

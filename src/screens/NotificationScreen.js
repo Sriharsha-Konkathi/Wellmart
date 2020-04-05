@@ -4,7 +4,7 @@ import { Image, Text, View, ScrollView, StyleSheet } from "react-native";
 import {
   responsiveScreenHeight,
   responsiveScreenWidth,
-  responsiveScreenFontSize
+  responsiveScreenFontSize,
 } from "react-native-responsive-dimensions";
 import Header from "../components/header";
 import Footer from "../components/footer";
@@ -13,7 +13,7 @@ class NotificationScreen extends Component {
   static navigationOptions = {
     title: "NotificationScreen Screen",
     maxLength: 400,
-    headerShown: false
+    headerShown: false,
   };
   render() {
     return (
@@ -23,7 +23,7 @@ class NotificationScreen extends Component {
           marginTop: responsiveScreenHeight(2.5),
           alignItems: "center",
           //   marginLeft: responsiveScreenHeight(2),
-          backgroundColor: "white"
+          backgroundColor: "white",
         }}
       >
         <Header
@@ -36,7 +36,7 @@ class NotificationScreen extends Component {
             alignSelf: "center",
             alignItems: "center",
             justifyContent: "center",
-            marginBottom: responsiveScreenHeight(8.45)
+            marginBottom: responsiveScreenHeight(8.45),
           }}
         >
           <Text style={{ fontSize: responsiveScreenHeight(3.25) }}>
@@ -46,7 +46,7 @@ class NotificationScreen extends Component {
         <View
           style={{
             backgroundColor: "#e6f5f1",
-            bottom: responsiveScreenHeight(0.74),
+            top: responsiveScreenHeight(89.7),
             position: "absolute",
             right: responsiveScreenWidth(43.8),
             height: responsiveScreenHeight(6.76),
@@ -54,7 +54,7 @@ class NotificationScreen extends Component {
             alignSelf: "flex-end",
             borderRadius: responsiveScreenHeight(100),
             borderColor: "grey",
-            borderWidth: 1
+            borderWidth: 1,
           }}
         >
           <View />

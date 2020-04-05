@@ -4,7 +4,7 @@ import { Image, Text, View, ScrollView, StyleSheet } from "react-native";
 import {
   responsiveScreenHeight,
   responsiveScreenWidth,
-  responsiveScreenFontSize
+  responsiveScreenFontSize,
 } from "react-native-responsive-dimensions";
 import Footer from "../components/footer";
 import Header from "../components/header";
@@ -15,7 +15,7 @@ class ProfileScreen extends Component {
   static navigationOptions = {
     title: "Profile Screen",
     maxLength: 400,
-    headerShown: false
+    headerShown: false,
   };
   constructor(props) {
     super(props);
@@ -29,8 +29,8 @@ class ProfileScreen extends Component {
             name: "info",
             family: "material",
             size: responsiveScreenHeight(3.51),
-            color: "black"
-          }
+            color: "black",
+          },
         },
         {
           title: "Plan Details",
@@ -40,8 +40,8 @@ class ProfileScreen extends Component {
             name: "attach-money",
             family: "material",
             size: responsiveScreenHeight(3.51),
-            color: "black"
-          }
+            color: "black",
+          },
         },
         {
           title: "Support",
@@ -51,10 +51,10 @@ class ProfileScreen extends Component {
             name: "help",
             family: "material",
             size: responsiveScreenHeight(3.51),
-            color: "black"
-          }
-        }
-      ]
+            color: "black",
+          },
+        },
+      ],
     };
   }
   render() {
@@ -65,7 +65,7 @@ class ProfileScreen extends Component {
           marginTop: responsiveScreenHeight(2.5),
           alignItems: "center",
           //   marginLeft: responsiveScreenHeight(2),
-          backgroundColor: "white"
+          backgroundColor: "white",
         }}
       >
         <Header
@@ -76,7 +76,7 @@ class ProfileScreen extends Component {
           style={{
             flex: 1,
             // backgroundColor: "yellow",
-            marginBottom: responsiveScreenHeight(7.5)
+            marginBottom: responsiveScreenHeight(7.5),
             // width: responsiveScreenWidth(100)
           }}
         >
@@ -93,7 +93,7 @@ class ProfileScreen extends Component {
               backgroundColor: "red",
               width: responsiveScreenHeight(20),
               height: responsiveScreenHeight(20),
-              alignSelf: "center"
+              alignSelf: "center",
             }}
           >
             <Image
@@ -102,14 +102,14 @@ class ProfileScreen extends Component {
               style={{
                 width: responsiveScreenHeight(20),
                 height: responsiveScreenHeight(20),
-                overflow: "hidden"
+                overflow: "hidden",
               }}
             />
           </View>
           <View
             style={{
               flexDirection: "row",
-              alignSelf: "center"
+              alignSelf: "center",
             }}
           >
             <Text style={{ fontSize: responsiveScreenHeight(3) }}>
@@ -123,7 +123,7 @@ class ProfileScreen extends Component {
                 height: responsiveScreenHeight(3),
                 overflow: "hidden",
                 marginLeft: responsiveScreenHeight(1),
-                alignSelf: "center"
+                alignSelf: "center",
               }}
             />
           </View>
@@ -134,13 +134,13 @@ class ProfileScreen extends Component {
                 opened={null}
                 contentStyle={{
                   fontWeight: "bold",
-                  fontSize: responsiveScreenHeight(2.08)
+                  fontSize: responsiveScreenHeight(2.08),
                 }}
                 style={{
                   borderColor: "#e6f5f1",
                   borderWidth: 2.5,
                   width: responsiveScreenWidth(85),
-                  backgroundColor: "#e6f5f1"
+                  backgroundColor: "#e6f5f1",
                 }}
               />
             </Block>
@@ -149,7 +149,7 @@ class ProfileScreen extends Component {
         <View
           style={{
             backgroundColor: "#e6f5f1",
-            bottom: responsiveScreenHeight(1),
+            top: responsiveScreenHeight(89.7),
             position: "absolute",
             left: responsiveScreenHeight(14.3),
             height: responsiveScreenHeight(6.76),
@@ -157,7 +157,7 @@ class ProfileScreen extends Component {
             alignSelf: "flex-end",
             borderRadius: responsiveScreenHeight(100),
             borderColor: "grey",
-            borderWidth: 1
+            borderWidth: 1,
           }}
         >
           <View />
@@ -180,13 +180,13 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: "center",
-    alignItems: "center"
+    alignItems: "center",
   },
   block: {
     height: responsiveScreenHeight(41.6),
     justifyContent: "center",
-    alignItems: "center"
-  }
+    alignItems: "center",
+  },
 });
 
 export default ProfileScreen;

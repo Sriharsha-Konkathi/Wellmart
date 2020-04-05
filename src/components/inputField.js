@@ -5,7 +5,7 @@ export default class InputField extends PureComponent {
   constructor(props) {
     super(props);
     this.state = {
-      text: this.props.defaultText != null ? this.props.defaultText : ""
+      text: this.props.defaultText != null ? this.props.defaultText : "",
     };
   }
 
@@ -15,7 +15,7 @@ export default class InputField extends PureComponent {
         style={{
           flexDirection: "row",
           paddingVertical: 2.5,
-          paddingHorizontal: 25
+          paddingHorizontal: 25,
 
           // justifyContent: "space-between"
           //backgroundColor: "red"
@@ -28,10 +28,10 @@ export default class InputField extends PureComponent {
               fontWeight: "bold",
               width: 150,
               textAlign: "justify",
-              color: "black"
+              color: "black",
               // flex: 0.6
             },
-            this.props.labelStyles
+            this.props.labelStyles,
           ]}
         >
           {this.props.label}:
@@ -47,13 +47,13 @@ export default class InputField extends PureComponent {
                 width: 180,
                 borderRadius: 10,
                 borderWidth: 1.5,
-                color: "black"
+                color: "black",
               },
-              this.props.inputStyles
+              this.props.inputStyles,
             ]}
             underlineColorAndroid="transparent"
             {...this.props}
-            onChangeText={text => this.setState({ text })}
+            onChangeText={(text) => this.setState({ text })}
             value={this.state.text}
           />
         ) : (
@@ -65,9 +65,9 @@ export default class InputField extends PureComponent {
                 alignItems: "center",
                 height: 30,
                 //flex: 0.4,
-                width: 120
+                width: 120,
                 //backgroundColor: "red"
-              }
+              },
             ]}
           >
             <Text
@@ -79,7 +79,7 @@ export default class InputField extends PureComponent {
                 marginLeft: 40,
                 fontSize: 14,
                 justifyContent: "center",
-                textAlign: "auto"
+                textAlign: "auto",
               }}
             >
               {this.props.linktext}

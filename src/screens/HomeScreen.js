@@ -5,7 +5,7 @@ import Logo from "../components/logo";
 import {
   responsiveScreenHeight,
   responsiveScreenWidth,
-  responsiveScreenFontSize
+  responsiveScreenFontSize,
 } from "react-native-responsive-dimensions";
 import ProfileIcon from "../components/profileIcons";
 import Button from "../components/button";
@@ -15,20 +15,21 @@ class HomeScreen extends Component {
   static navigationOptions = {
     title: "Home Screen",
     maxLength: 400,
-    headerShown: false
+    headerShown: false,
   };
   render() {
     return (
       <View
         style={{
           flex: 1,
-          backgroundColor: "white"
+          backgroundColor: "white",
         }}
       >
         <View
           style={{
             marginTop: responsiveScreenHeight(2.5),
-            alignSelf: "center"
+            alignSelf: "center",
+            backgroundColor: "white",
           }}
         >
           <Logo />
@@ -39,8 +40,8 @@ class HomeScreen extends Component {
             flex: 1,
             alignItems: "center",
             // justifyContent: "center",
-            marginLeft: responsiveScreenHeight(2),
-            backgroundColor: "white"
+            marginHorizontal: responsiveScreenHeight(2),
+            // backgroundColor: "yellow",
           }}
         >
           <View>
@@ -56,8 +57,8 @@ class HomeScreen extends Component {
             style={{
               flex: 1,
               marginTop: responsiveScreenHeight(2),
-              marginBottom: responsiveScreenHeight(7.5)
-              // backgroundColor: "red"
+              marginBottom: responsiveScreenHeight(7.5),
+              // backgroundColor: "skyblue",
             }}
           >
             <View style={{ flex: 1, flexDirection: "row" }}>
@@ -68,7 +69,9 @@ class HomeScreen extends Component {
                 title="Health Status"
                 buttonStyle={[styles.buttonStyle]}
                 textStyle={styles.textStyle}
-                onPress={() => this.props.navigation.navigate("HomeScreen")}
+                onPress={() =>
+                  this.props.navigation.navigate("HealthStatusScreen")
+                }
               />
             </View>
             <View style={{ flex: 1, flexDirection: "row" }}>
@@ -79,7 +82,9 @@ class HomeScreen extends Component {
                 title="Socio Economic Status"
                 buttonStyle={[styles.buttonStyle]}
                 textStyle={styles.textStyle}
-                onPress={() => this.props.navigation.navigate("HomeScreen")}
+                onPress={() =>
+                  this.props.navigation.navigate("SocioEconomicStatus")
+                }
               />
             </View>
             <View style={{ flex: 1, flexDirection: "row" }}>
@@ -90,7 +95,9 @@ class HomeScreen extends Component {
                 title="Environmental Status"
                 buttonStyle={[styles.buttonStyle]}
                 textStyle={styles.textStyle}
-                onPress={() => this.props.navigation.navigate("HomeScreen")}
+                onPress={() =>
+                  this.props.navigation.navigate("EnvironmentalStatus")
+                }
               />
             </View>
             <View style={{ flex: 1, flexDirection: "row" }}>
@@ -101,7 +108,7 @@ class HomeScreen extends Component {
                 title="Life Style"
                 buttonStyle={[styles.buttonStyle]}
                 textStyle={styles.textStyle}
-                onPress={() => this.props.navigation.navigate("HomeScreen")}
+                onPress={() => this.props.navigation.navigate("LifeStyle")}
               />
             </View>
             <View style={{ flex: 1, flexDirection: "row" }}>
@@ -112,7 +119,7 @@ class HomeScreen extends Component {
                 title="Food Habits"
                 buttonStyle={[styles.buttonStyle]}
                 textStyle={styles.textStyle}
-                onPress={() => this.props.navigation.navigate("HomeScreen")}
+                onPress={() => this.props.navigation.navigate("FoodHabits")}
               />
             </View>
           </ScrollView>
@@ -120,7 +127,7 @@ class HomeScreen extends Component {
         <View
           style={{
             backgroundColor: "#e6f5f1",
-            bottom: responsiveScreenHeight(0.74),
+            top: responsiveScreenHeight(92.5),
             position: "absolute",
             left: responsiveScreenHeight(3.9),
             height: responsiveScreenHeight(6.76),
@@ -128,12 +135,13 @@ class HomeScreen extends Component {
             alignSelf: "flex-end",
             borderRadius: responsiveScreenHeight(100),
             borderColor: "grey",
-            borderWidth: 1
+            borderWidth: 1,
           }}
         >
           <View />
         </View>
         <Footer
+          style={{ top: responsiveScreenHeight(90.5) }}
           onPressHome={() => this.props.navigation.navigate("HomeScreen")}
           onPressProfile={() => this.props.navigation.navigate("ProfileScreen")}
           onPressBell={() =>
@@ -148,14 +156,6 @@ class HomeScreen extends Component {
 }
 
 const styles = StyleSheet.create({
-  // title: {
-  //   fontSize: 35,
-  //   fontWeight: "bold",
-  //   textAlign: "left",
-  //   paddingVertical: 50,
-  //   paddingLeft: 35,
-  //   color: "black"
-  // },
   buttonStyle: {
     backgroundColor: "#e6f5f1",
     borderWidth: 1.2,
@@ -164,14 +164,14 @@ const styles = StyleSheet.create({
     width: responsiveScreenWidth(62),
     alignSelf: "center",
     justifyContent: "center",
-    marginHorizontal: responsiveScreenHeight(3.5)
+    marginHorizontal: responsiveScreenHeight(3.5),
   },
   textStyle: {
     textAlign: "center",
     fontWeight: "bold",
     color: "black",
-    fontSize: responsiveScreenFontSize(2.25)
-  }
+    fontSize: responsiveScreenFontSize(2.25),
+  },
 });
 
 export default HomeScreen;
