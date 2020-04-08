@@ -16,9 +16,9 @@ import RightArrowNav from "../components/rightArrowNavigator";
 import LeftArrowNav from "../components/leftArrowNavigator";
 import RightSubmit from "../components/rightSubmit";
 
-class FoodHabits extends Component {
+class PersonalIntervension extends Component {
   static navigationOptions = {
-    title: "LifeStyle Screen",
+    title: "PersonalIntervension Screen",
     maxLength: 400,
     headerShown: false,
   };
@@ -35,7 +35,7 @@ class FoodHabits extends Component {
       >
         <Header
           onPress={() => this.props.navigation.goBack()}
-          title={"Food Habits"}
+          title={"Personal Intervension Plan"}
         />
         <View
           style={{
@@ -63,111 +63,97 @@ class FoodHabits extends Component {
               }}
             >
               <View style={{ marginTop: 15 }}>
-                <DropDown
-                  label="Food preferences"
-                  values={[
-                    "Veg",
-                    "Non-Veg",
-                    "Vegan",
-                    "Pescatarian",
-                    "Halal Diet",
-                    "Jain Diet",
-                    "Hindu Diet",
-                    "Jewish Diet",
-                  ]}
-                  style={{ width: 170 }}
-                />
-              </View>
-              <View style={{ flex: 1 }}>
+                <Text
+                  style={{
+                    fontSize: 18,
+                    fontWeight: "bold",
+                    marginLeft: 12,
+                    marginBottom: 10,
+                  }}
+                >
+                  Personalized Diet Plan
+                </Text>
                 <InputField
-                  label="No. of meals a day"
+                  label="Prescribed daily calorie intake "
                   labelStyles={{
                     fontSize: 16,
-                    width: 152,
+                    width: 215,
                     alignSelf: "center",
                     textAlign: "left",
                   }}
-                  inputStyles={{ width: 180, fontSize: 16 }}
+                  inputStyles={{ width: 100, fontSize: 16 }}
+                  keyboardType="numeric"
+                  defaultText={"2250"}
+                />
+                <InputField
+                  label="Best available food options "
+                  labelStyles={{
+                    fontSize: 16,
+                    width: 215,
+                    alignSelf: "center",
+                    textAlign: "left",
+                  }}
+                  inputStyles={{ width: 100, fontSize: 16 }}
                   keyboardType="numeric"
                 />
+                <InputField
+                  label="Clinical intervention "
+                  labelStyles={{
+                    fontSize: 16,
+                    width: 215,
+                    alignSelf: "center",
+                    textAlign: "left",
+                  }}
+                  inputStyles={{ width: 100, fontSize: 16 }}
+                  defaultText={"Required"}
+                />
               </View>
-              <DropDown
-                label="Food consumption habits"
-                values={["Local Staple Food", "Junk Food", "Mixed Diet"]}
-                style={{ width: 170 }}
+              <View>
+                <Text
+                  style={{
+                    fontSize: 18,
+                    fontWeight: "bold",
+                    marginLeft: 12,
+                    marginVertical: 15,
+                  }}
+                >
+                  MULTI-SECTORAL INTERVENTIONS
+                </Text>
+                <InputField
+                  label="Government support and nutritional plans applicable to you "
+                  labelStyles={{
+                    fontSize: 16,
+                    width: 215,
+                    alignSelf: "center",
+                    textAlign: "left",
+                  }}
+                  inputStyles={{ width: 100, fontSize: 16 }}
+                  defaultText={"Yes"}
+                />
+              </View>
+              <Button
+                title="Weight Management Plan"
+                buttonStyle={[styles.buttonStyle]}
+                textStyle={styles.textStyle}
+                onPress={() => this.props.navigation.navigate("WeightMgmtPlan")}
               />
-              <Text
-                style={{
-                  flex: 1,
-                  textAlign: "center",
-                  marginVertical: 15,
-                  fontSize: 18,
-                  fontWeight: "bold",
-                }}
-              >
-                Staple Food Habits
-              </Text>
-              <View style={{ flex: 1 }}>
-                <InputField
-                  label="Breakfast"
-                  labelStyles={{
-                    fontSize: 16,
-                    width: 155,
-                    alignSelf: "center",
-                    textAlign: "left",
-                  }}
-                  inputStyles={{ width: 180, fontSize: 16 }}
-                  keyboardType="numeric"
-                />
-              </View>
-              <View style={{ flex: 1 }}>
-                <InputField
-                  label="Lunch"
-                  labelStyles={{
-                    fontSize: 16,
-                    width: 155,
-                    alignSelf: "center",
-                    textAlign: "left",
-                  }}
-                  inputStyles={{ width: 180, fontSize: 16 }}
-                  keyboardType="numeric"
-                />
-              </View>
-              <View style={{ flex: 1 }}>
-                <InputField
-                  label="Dinner"
-                  labelStyles={{
-                    fontSize: 16,
-                    width: 155,
-                    alignSelf: "center",
-                    textAlign: "left",
-                  }}
-                  inputStyles={{ width: 180, fontSize: 16 }}
-                  keyboardType="numeric"
-                />
-              </View>
-              <View style={{ flex: 1 }}>
-                <InputField
-                  label="Dietary Restrictions"
-                  labelStyles={{
-                    fontSize: 16,
-                    width: 155,
-                    alignSelf: "center",
-                    textAlign: "left",
-                  }}
-                  inputStyles={{ width: 180, fontSize: 16 }}
-                  keyboardType="numeric"
-                />
-              </View>
+              <Button
+                title="Personalized Wellness Recommendations"
+                buttonStyle={[styles.buttonStyle]}
+                textStyle={styles.textStyle}
+                onPress={() =>
+                  this.props.navigation.navigate("PersonalWellnessRec")
+                }
+              />
             </ScrollView>
           </View>
         </View>
         <LeftArrowNav
-          onPress={() => this.props.navigation.navigate("LifeStyle")}
-        />
-        <RightSubmit
           onPress={() => this.props.navigation.navigate("PerHealthAssess")}
         />
+        {/* <RightSubmit
+          onPress={() => this.props.navigation.navigate("PerHealthAssess")}
+        /> */}
         <Footer
           onPressHome={() => this.props.navigation.navigate("HomeScreen")}
           onPressProfile={() => this.props.navigation.navigate("ProfileScreen")}
@@ -189,16 +175,23 @@ const styles = StyleSheet.create({
     borderWidth: 1.2,
     borderRadius: 15,
     paddingVertical: responsiveScreenHeight(1.1),
-    width: responsiveScreenWidth(32),
+    width: responsiveScreenWidth(60),
     alignSelf: "center",
     justifyContent: "center",
     marginHorizontal: responsiveScreenHeight(3.5),
+    shadowOffset: {
+      width: 2,
+      height: 40,
+    },
+    shadowOpacity: 1,
+    shadowRadius: 20.0,
+    elevation: 7,
   },
   textStyle: {
     textAlign: "center",
     fontWeight: "bold",
     color: "black",
-    fontSize: responsiveScreenFontSize(2.25),
+    fontSize: responsiveScreenFontSize(2.0),
   },
   outerViewStyle: {
     flexDirection: "row",
@@ -207,4 +200,4 @@ const styles = StyleSheet.create({
   innerTextStyle: { flex: 4, fontSize: 18 },
 });
 
-export default FoodHabits;
+export default PersonalIntervension;

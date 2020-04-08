@@ -15,6 +15,10 @@ import EnvironmentalStatus from "./src/screens/EnvironmentalStatus";
 import LifeStyle from "./src/screens/LifeStyle";
 import FoodHabits from "./src/screens/FoodHabits";
 import RightSubmit from "./src/components/rightSubmit";
+import PerHealthAssess from "./src/screens/PersonalHealthAssess";
+import PersonalIntervension from "./src/screens/PersonalIntervension";
+import WeightMgmtPlan from "./src/screens/WeightMGMTPlan";
+import PersonalWellnessRec from "./src/screens/PersonalWellnessRec";
 
 const AppNavigator = createStackNavigator(
   {
@@ -30,6 +34,10 @@ const AppNavigator = createStackNavigator(
     LifeStyle: LifeStyle,
     FoodHabits: FoodHabits,
     RightSubmit: RightSubmit,
+    PerHealthAssess: PerHealthAssess,
+    PersonalIntervension: PersonalIntervension,
+    WeightMgmtPlan: WeightMgmtPlan,
+    PersonalWellnessRec: PersonalWellnessRec,
   },
   {
     initialRouteName: "SplashScreen",

@@ -9,15 +9,15 @@ import { Image, StyleSheet, View, Text, TouchableOpacity } from "react-native";
 import Logo from "../components/logo";
 import {
   responsiveScreenHeight,
-  responsiveScreenWidth
+  responsiveScreenWidth,
 } from "react-native-responsive-dimensions";
 
-const Header = props => {
+const Header = (props) => {
   return (
     <View
       style={{
         flexDirection: "row",
-        zIndex: 1
+        zIndex: 1,
         // backgroundColor: "red"
         // height: 120
       }}
@@ -43,12 +43,12 @@ const Header = props => {
         style={{
           flex: 1,
           justifyContent: "center",
-          alignItems: "center"
+          alignItems: "center",
         }}
       >
         <Logo />
         {props.title ? (
-          <Text style={styles.title}>{props.title}</Text>
+          <Text style={[styles.title, props.style]}>{props.title}</Text>
         ) : (
           <View />
         )}
@@ -62,8 +62,8 @@ const styles = StyleSheet.create({
     fontSize: responsiveScreenHeight(3.38),
     fontWeight: "bold",
     textAlign: "center",
-    width: responsiveScreenWidth(100)
-  }
+    width: responsiveScreenWidth(100),
+  },
 });
 
 export default Header;

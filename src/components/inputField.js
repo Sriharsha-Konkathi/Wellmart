@@ -48,6 +48,7 @@ export default class InputField extends PureComponent {
                 borderRadius: 10,
                 borderWidth: 1.5,
                 color: "black",
+                paddingLeft: 10,
               },
               this.props.inputStyles,
             ]}
