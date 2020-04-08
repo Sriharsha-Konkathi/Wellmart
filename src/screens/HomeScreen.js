@@ -165,6 +165,13 @@ const styles = StyleSheet.create({
     alignSelf: "center",
     justifyContent: "center",
     marginHorizontal: responsiveScreenHeight(3.5),
+    shadowOffset: {
+      width: 2,
+      height: 40,
+    },
+    shadowOpacity: 1,
+    shadowRadius: 20.0,
+    elevation: 7,
   },
   textStyle: {
     textAlign: "center",

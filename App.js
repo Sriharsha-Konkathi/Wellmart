@@ -14,6 +14,7 @@ import SocioEconomicStatus from "./src/screens/SocioEconomicStatus";
 import EnvironmentalStatus from "./src/screens/EnvironmentalStatus";
 import LifeStyle from "./src/screens/LifeStyle";
 import FoodHabits from "./src/screens/FoodHabits";
+import RightSubmit from "./src/components/rightSubmit";
 
 const AppNavigator = createStackNavigator(
   {
@@ -28,6 +29,7 @@ const AppNavigator = createStackNavigator(
     EnvironmentalStatus: EnvironmentalStatus,
     LifeStyle: LifeStyle,
     FoodHabits: FoodHabits,
+    RightSubmit: RightSubmit,
   },
   {
     initialRouteName: "SplashScreen",

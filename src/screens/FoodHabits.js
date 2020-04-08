@@ -14,6 +14,7 @@ import DropDown from "../components/dropDown";
 import CustomCheckbox from "../components/checkbox";
 import RightArrowNav from "../components/rightArrowNavigator";
 import LeftArrowNav from "../components/leftArrowNavigator";
+import RightSubmit from "../components/rightSubmit";
 
 class FoodHabits extends Component {
   static navigationOptions = {
@@ -164,7 +165,7 @@ class FoodHabits extends Component {
         <LeftArrowNav
           onPress={() => this.props.navigation.navigate("LifeStyle")}
         />
-        <RightArrowNav
+        <RightSubmit
           onPress={() => this.props.navigation.navigate("HomeScreen")}
         />
         <Footer
