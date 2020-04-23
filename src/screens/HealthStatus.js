@@ -107,13 +107,13 @@ class HealthStatusScreen extends Component {
                   label="BP Level"
                   labelStyles={{ fontSize: 16, width: 70, alignSelf: "center" }}
                   inputStyles={{ width: 50, fontSize: 16 }}
-                  keyboardType="numeric"
+                  // keyboardType="numeric"
                 />
                 <InputField
                   label="Blood Glucose"
                   labelStyles={{ fontSize: 16, width: 70, alignSelf: "center" }}
                   inputStyles={{ width: 50, fontSize: 16 }}
-                  keyboardType="numeric"
+                  // keyboardType="numeric"
                 />
               </View>
               <View style={{ marginTop: 15, marginLeft: 20, padding: 5 }}>
@@ -139,7 +139,7 @@ class HealthStatusScreen extends Component {
                   textAlign: "left",
                 }}
                 inputStyles={{ width: 70, fontSize: 16 }}
-                keyboardType="numeric"
+                // keyboardType="numeric"
               />
               <InputField
                 label="Past treatments"
@@ -149,7 +149,7 @@ class HealthStatusScreen extends Component {
                   alignSelf: "center",
                 }}
                 inputStyles={{ width: 70, fontSize: 16 }}
-                keyboardType="numeric"
+                // keyboardType="numeric"
               />
             </ScrollView>
           </View>

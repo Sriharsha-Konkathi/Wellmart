@@ -61,12 +61,12 @@ class EnvironmentalStatus extends Component {
                 marginBottom: 45,
               }}
             >
-              <View style={{ marginVertical: 15, marginLeft: 25 }}>
-                <CustomCheckbox
-                  label={"Clean drinking water availability:"}
-                  textStyle={{ width: 280, fontSize: 16 }}
-                />
-              </View>
+              <View style={{ marginTop: 10 }}></View>
+              <DropDown
+                label="Clean Drinking Water Availability "
+                values={["Yes", "No"]}
+                style={{ width: 170 }}
+              />
               <DropDown
                 label="Air Pollution level "
                 values={["Low", "Medium", "High"]}
@@ -77,12 +77,11 @@ class EnvironmentalStatus extends Component {
                 values={["Low", "Medium", "High"]}
                 style={{ width: 170 }}
               />
-              <View style={{ marginVertical: 15, marginLeft: 25 }}>
-                <CustomCheckbox
-                  label={"Cleanliness of surrounding:"}
-                  textStyle={{ width: 280, fontSize: 16 }}
-                />
-              </View>
+              <DropDown
+                label="Cleanliness of Surroudings "
+                values={["Clean", "Moderately Clean", "Dirty", "Very Dirty"]}
+                style={{ width: 170 }}
+              />
             </ScrollView>
           </View>
         </View>

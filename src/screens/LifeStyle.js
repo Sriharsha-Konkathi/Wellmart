@@ -12,6 +12,7 @@ import DropDown from "../components/dropDown";
 import CustomCheckbox from "../components/checkbox";
 import RightArrowNav from "../components/rightArrowNavigator";
 import LeftArrowNav from "../components/leftArrowNavigator";
+import InputField from "../components/inputField";
 
 class LifeStyle extends Component {
   static navigationOptions = {
@@ -19,6 +20,12 @@ class LifeStyle extends Component {
     maxLength: 400,
     headerShown: false,
   };
+  constructor(props) {
+    super(props);
+    this.state = {
+      smoke_scale: false,
+    };
+  }
   render() {
     return (
       <View
@@ -59,20 +66,48 @@ class LifeStyle extends Component {
                 marginBottom: 45,
               }}
             >
-              <View style={{ marginVertical: 15, marginLeft: 25 }}>
-                <CustomCheckbox
-                  label={"Smoking :"}
-                  textStyle={{ width: 170, fontSize: 16 }}
-                />
+              <View style={{ marginTop: 10 }} />
+              <DropDown
+                label="Smoking Scale"
+                values={["Non-smoker", "Past Smoker", "Daily(>1)"]}
+                style={{ width: 170 }}
+                onChange={(value) => {
+                  if (value == "Daily(>1)") {
+                    this.setState({
+                      smoke_scale: true,
+                    });
+                  } else {
+                    this.setState({
+                      smoke_scale: false,
+                    });
+                  }
+                }}
+              />
+              <View>
+                {this.state.smoke_scale ? (
+                  <InputField
+                    label="Cigarettes Per Day"
+                    labelStyles={{
+                      fontSize: 16,
+                      width: 152,
+                      alignSelf: "center",
+                      textAlign: "left",
+                    }}
+                    inputStyles={{ width: 180, fontSize: 16 }}
+                    keyboardType="numeric"
+                  />
+                ) : (
+                  <View />
+                )}
               </View>
               <DropDown
                 label="Alcohol Consumption"
-                values={["Low", "Medium", "High"]}
+                values={["Non-Alcoholic", "Low", "Medium", "High"]}
                 style={{ width: 170 }}
               />
               <DropDown
                 label="Drug Usage"
-                values={["Low", "Medium", "High"]}
+                values={["No drug use", "Low", "Medium", "High"]}
                 style={{ width: 170 }}
               />
             </ScrollView>

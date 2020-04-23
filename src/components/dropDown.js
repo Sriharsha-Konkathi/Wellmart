@@ -62,9 +62,10 @@ class DropDown extends PureComponent {
               fontSize: 18,
               color: "black",
             }}
-            onValueChange={(itemValue, itemIndex) =>
-              this.setState({ language: itemValue })
-            }
+            onValueChange={(itemValue, itemIndex) => {
+              this.setState({ language: itemValue });
+              this.props.onChange(itemValue);
+            }}
           >
             {pickers}
 

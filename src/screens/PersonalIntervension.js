@@ -1,6 +1,13 @@
 import React, { Component } from "react";
 
-import { Image, Text, View, ScrollView, StyleSheet } from "react-native";
+import {
+  Image,
+  Text,
+  View,
+  ScrollView,
+  StyleSheet,
+  Linking,
+} from "react-native";
 import {
   responsiveScreenHeight,
   responsiveScreenWidth,
@@ -15,6 +22,7 @@ import CustomCheckbox from "../components/checkbox";
 import RightArrowNav from "../components/rightArrowNavigator";
 import LeftArrowNav from "../components/leftArrowNavigator";
 import RightSubmit from "../components/rightSubmit";
+import Accordian from "../components/accordion";
 
 class PersonalIntervension extends Component {
   static navigationOptions = {
@@ -22,6 +30,29 @@ class PersonalIntervension extends Component {
     maxLength: 400,
     headerShown: false,
   };
+  constructor(props) {
+    super(props);
+    this.state = {
+      menu: [
+        {
+          title: "Best available food options",
+          data:
+            "Yogurt, Pumpkin Seeds, Fortified Orange Juice, Cheese, Spinach, Smoked Salmon, chickpeas, garlic, kidney beans, onions, peas",
+        },
+        {
+          title: "Foods To Avoid",
+          data:
+            "Milk, Dairy products, whole grain cereals , Gluten rich food like pasta, brown rice, peanuts, parsley and chocolates",
+        },
+        {
+          title: "Clinical intervention",
+          data:
+            "Please call the government helpline at +1-800-4646-0999 to get connected to a nutrition consultant for personalized nutrition support",
+        },
+      ],
+    };
+  }
+
   render() {
     return (
       <View
@@ -85,28 +116,7 @@ class PersonalIntervension extends Component {
                   keyboardType="numeric"
                   defaultText={"2250"}
                 />
-                <InputField
-                  label="Best available food options "
-                  labelStyles={{
-                    fontSize: 16,
-                    width: 215,
-                    alignSelf: "center",
-                    textAlign: "left",
-                  }}
-                  inputStyles={{ width: 100, fontSize: 16 }}
-                  keyboardType="numeric"
-                />
-                <InputField
-                  label="Clinical intervention "
-                  labelStyles={{
-                    fontSize: 16,
-                    width: 215,
-                    alignSelf: "center",
-                    textAlign: "left",
-                  }}
-                  inputStyles={{ width: 100, fontSize: 16 }}
-                  defaultText={"Required"}
-                />
+                <View style={{ marginTop: 10 }}>{this.renderAccordians()}</View>
               </View>
               <View>
                 <Text
@@ -119,17 +129,32 @@ class PersonalIntervension extends Component {
                 >
                   MULTI-SECTORAL INTERVENTIONS
                 </Text>
-                <InputField
-                  label="Government support and nutritional plans applicable to you "
-                  labelStyles={{
-                    fontSize: 16,
-                    width: 215,
-                    alignSelf: "center",
-                    textAlign: "left",
-                  }}
-                  inputStyles={{ width: 100, fontSize: 16 }}
-                  defaultText={"Yes"}
-                />
+                <View style={{ marginHorizontal: 12 }}>
+                  <Text
+                    style={{
+                      fontWeight: "bold",
+                      fontSize: 15,
+                      paddingBottom: 5,
+                    }}
+                  >
+                    Government Support Options:
+                  </Text>
+                  <Text style={{ fontSize: 15 }}>
+                    Please{" "}
+                    <Text
+                      style={{
+                        color: "blue",
+                        textDecorationLine: "underline",
+                        fontSize: 15,
+                      }}
+                      onPress={() => Linking.openURL("http://google.com")}
+                    >
+                      Click here
+                    </Text>{" "}
+                    to learn more about Government Schemes applicable to you for
+                    nutrition support
+                  </Text>
+                </View>
               </View>
               <Button
                 title="Weight Management Plan"
@@ -166,6 +191,14 @@ class PersonalIntervension extends Component {
       </View>
     );
   }
+
+  renderAccordians = () => {
+    const items = [];
+    for (let [index, item] of this.state.menu.entries()) {
+      items.push(<Accordian title={item.title} data={item.data} key={index} />);
+    }
+    return items;
+  };
 }
 
 const styles = StyleSheet.create({

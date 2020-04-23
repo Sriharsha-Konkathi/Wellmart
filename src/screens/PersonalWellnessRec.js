@@ -72,11 +72,12 @@ class PersonalWellnessRec extends Component {
               borderBottomColorColor: "gray",
               borderBottomWidth: 1.2,
               marginHorizontal: responsiveScreenWidth(3),
+              marginBottom: 5,
             }}
           >
             <View style={{ marginTop: 10, padding: 16, paddingTop: 20 }}>
               <Text style={{ fontSize: 18 }}>
-                Hi <Text style={{ fontWeight: "bold" }}>James!</Text> Please
+                Hi <Text style={{ fontWeight: "bold" }}>John!</Text> Please
                 choose a wellness service to get a personalized recommendation
               </Text>
             </View>

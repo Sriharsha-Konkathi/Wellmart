@@ -1,6 +1,6 @@
-import React, { PureComponent, Component } from "react";
+import React, { Component } from "react";
 
-import { Image, Text, View, ScrollView, StyleSheet } from "react-native";
+import { Text, View, ScrollView, StyleSheet } from "react-native";
 import Logo from "../components/logo";
 import {
   responsiveScreenHeight,
@@ -46,7 +46,8 @@ class HomeScreen extends Component {
         >
           <View>
             <Text style={{ fontSize: responsiveScreenFontSize(2.4) }}>
-              Hi John! Let's get started on this journey to a healthy lifestyle.
+              Hi <Text style={{ fontWeight: "bold" }}>John!</Text> Let's get
+              started on this journey to a healthy lifestyle.
               {"\n"}
             </Text>
             <Text style={{ fontSize: responsiveScreenFontSize(2.25) }}>

@@ -117,7 +117,7 @@ class FoodHabits extends Component {
                     textAlign: "left",
                   }}
                   inputStyles={{ width: 180, fontSize: 16 }}
-                  keyboardType="numeric"
+                  // keyboardType="numeric"
                 />
               </View>
               <View style={{ flex: 1 }}>
@@ -130,7 +130,7 @@ class FoodHabits extends Component {
                     textAlign: "left",
                   }}
                   inputStyles={{ width: 180, fontSize: 16 }}
-                  keyboardType="numeric"
+                  // keyboardType="numeric"
                 />
               </View>
               <View style={{ flex: 1 }}>
@@ -143,7 +143,7 @@ class FoodHabits extends Component {
                     textAlign: "left",
                   }}
                   inputStyles={{ width: 180, fontSize: 16 }}
-                  keyboardType="numeric"
+                  // keyboardType="numeric"
                 />
               </View>
               <View style={{ flex: 1 }}>
@@ -156,7 +156,7 @@ class FoodHabits extends Component {
                     textAlign: "left",
                   }}
                   inputStyles={{ width: 180, fontSize: 16 }}
-                  keyboardType="numeric"
+                  // keyboardType="numeric"
                 />
               </View>
             </ScrollView>
